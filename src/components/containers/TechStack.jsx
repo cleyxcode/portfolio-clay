@@ -35,8 +35,6 @@ const SECTIONS = [
       { name: "Dart", icon: "dart", monochrome: true },
       { name: "Kotlin", icon: "kotlin", monochrome: true },
       { name: "React Native", icon: "reactnative" },
-      { name: "Expo", icon: "expo" },
-      { name: "NativeWind", icon: "nativewind" },
       { name: "SQLite", icon: "sqlite" },
     ],
   },
