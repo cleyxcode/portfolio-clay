@@ -86,13 +86,13 @@ function TechStack() {
 
   return (
     <div
-      className={`p-6 flex-1 min-h-0 backdrop-blur-sm border flex flex-col ${
+      className={`p-6 h-fit min-h-0 backdrop-blur-sm border flex flex-col ${
         darkMode
           ? "bg-[#17171a] border-gray-500/40 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           : "bg-white border-gray-500/40 shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
       }`}
     >
-      <div className="flex flex-col mb-0 md:mb-[20px] gap-4 shrink-0 mb-3">
+      <div className="flex flex-col gap-4 shrink-0 mb-3 md:mb-5">
         <div>
           <div className="flex items-center gap-3 mb-1">
             <h2
@@ -106,7 +106,7 @@ function TechStack() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 overflow-y-auto sm:h-[450px] md:h-[450px] lg:h-[430px] xl:h-[300px] 2xl:h-[320px] custom-scroll pb-4 pr-2">
+      <div className="flex flex-col gap-3 min-h-0 max-h-[80dvh] overflow-y-auto custom-scroll pb-6 pr-2">
         {SECTIONS.map((section) => (
           <div key={section.label}>
             <div className="flex items-center gap-2 mb-2">
@@ -128,7 +128,7 @@ function TechStack() {
               {section.techs.map((tech) => (
                 <div
                   key={tech.name}
-                  className="group flex flex-col items-center gap-1 w-[40px] sm:w-[64px]"
+                  className="group flex flex-col items-center gap-1 w-[72px] sm:w-[78px]"
                   title={tech.name}
                 >
                   <div
@@ -141,7 +141,7 @@ function TechStack() {
                     <StackIcon name={tech.icon} monochrome={tech.monochrome} />
                   </div>
                   <span
-                    className={`w-full truncate text-center text-[10px] sm:text-[12px] leading-tight font-mono uppercase tracking-tight ${
+                    className={`w-full min-h-[2.25em] break-words text-center text-[10px] sm:text-[12px] leading-tight font-mono uppercase tracking-tight ${
                       darkMode ? "text-gray-400" : "text-gray-600"
                     }`}
                   >
