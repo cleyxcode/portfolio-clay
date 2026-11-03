@@ -88,7 +88,7 @@ function FeaturedProjects() {
         </div>
       </header>
 
-      <div className="space-y-4 min-h-0 max-h-none overflow-visible lg:h-[800px] lg:max-h-[800px] lg:overflow-y-auto custom-scroll">
+      <div className="space-y-4 min-h-0 h-[70vh] max-h-[80dvh] overflow-y-auto overscroll-contain pb-6 custom-scroll lg:h-[800px] lg:max-h-[800px]">
         {projects.map((project, index) => (
           <article
             key={index}

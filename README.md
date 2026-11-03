@@ -2,6 +2,10 @@
 
 Personal portfolio website for Bredcly F Tuhuleruw, also known as cleyxcode. The site showcases full-stack web development, mobile applications, school information systems, organization platforms, IoT projects, machine learning, Unity, and augmented-reality work.
 
+## Live portfolio
+
+Visit the deployed portfolio: [portfolio-clayxcode-eta.vercel.app](https://portfolio-clayxcode-eta.vercel.app)
+
 ## Built with
 
 - React and Vite
