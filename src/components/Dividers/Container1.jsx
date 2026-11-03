@@ -92,7 +92,7 @@ function Container1() {
       <div className="flex flex-col md:flex-row md:gap-5 items-center w-full">
         <div className="flex-shrink-0 w-full sm:w-auto flex justify-center sm:justify-start">
           <div
-            className={`relative group p-2 overflow-hidden md:cursor-pointer rounded-md`}
+            className={`hero-profile relative group p-2 overflow-hidden md:cursor-pointer rounded-md`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleProfileClick}
@@ -124,11 +124,11 @@ function Container1() {
         </div>
 
         <div className="flex flex-col items-center md:items-start w-full sm:flex-1 gap-2 sm:gap-3">
-          <h1 className="font-display font-light text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl text-center sm:text-left leading-tight">
+          <h1 className="hero-name font-display font-light text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl text-center sm:text-left leading-tight">
             Bredcly F Tuhuleruw
           </h1>
           <p
-            className={`text-[9px] sm:text-[10px] md:text-[11px] lg:text-[15px] font-mono uppercase tracking-[0.25em] sm:tracking-[0.3em] ${
+            className={`hero-role text-[9px] sm:text-[10px] md:text-[11px] lg:text-[15px] font-mono uppercase tracking-[0.25em] sm:tracking-[0.3em] ${
               darkMode ? "text-gray-200" : "text-gray-900"
             }`}
           >
@@ -136,7 +136,7 @@ function Container1() {
           </p>
 
           <div
-            className={`flex items-center gap-1 text-[10px] sm:text-[11px] md:text-[14px] ${
+            className={`hero-location flex items-center gap-1 text-[10px] sm:text-[11px] md:text-[14px] ${
               darkMode ? "text-gray-400" : "text-gray-600"
             }`}
           >
@@ -144,7 +144,7 @@ function Container1() {
             <span>Wayame, Ambon, Maluku, Indonesia</span>
           </div>
 
-          <div className="flex flex-row gap-3 w-[70%] sm:w-max pt-3 sm:pt-4 items-center sm:items-start">
+          <div className="hero-actions flex flex-row gap-3 w-[70%] sm:w-max pt-3 sm:pt-4 items-center sm:items-start">
             <a
               href="cvclay.pdf"
               target="_blank"
