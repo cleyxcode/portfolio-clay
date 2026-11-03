@@ -1,4 +1,4 @@
-import ProfilePic from "../../assets/img/originalProfilePicture.png";
+import ProfilePic from "../../assets/img/ProfileAsasa.png";
 import Halftone from "../Halftone";
 import { useDarkMode } from "../../context/DarkmodeProvider";
 import AnimeBlack from "../../assets/vid/AnimeDark.mp4";
@@ -77,7 +77,7 @@ function Container1() {
               levels={[0, 0.4]}
               dotScale={0.9}
               intensity={0.3}
-              photoOpacity={1}
+              photoOpacity={0.78}
               background="transparent"
               dotColor={"rgba(255,255,255,0.80)"}
               className={`relative h-36 w-36 sm:h-30 sm:w-30 md:h-40 md:w-40 lg:h-50 lg:w-50 xl:h-60 xl:w-60 border transition-opacity duration-300 group-hover:opacity-0 ${isHovered && "border-transparent"} ${
@@ -98,14 +98,14 @@ function Container1() {
 
         <div className="flex flex-col items-center md:items-start w-full sm:flex-1 gap-2 sm:gap-3">
           <h1 className="font-display font-light text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl text-center sm:text-left leading-tight">
-            Ehrvayn Rayven Olivera
+            Bredcly F Tuhuleruw
           </h1>
           <p
             className={`text-[9px] sm:text-[10px] md:text-[11px] lg:text-[15px] font-mono uppercase tracking-[0.25em] sm:tracking-[0.3em] ${
               darkMode ? "text-gray-200" : "text-gray-900"
             }`}
           >
-            Aspiring Full Stack Developer
+            Full-Stack Developer
           </p>
 
           <div
@@ -114,12 +114,12 @@ function Container1() {
             }`}
           >
             <FaLocationDot />
-            <span>Naga City, Camarines Sur, Philippines</span>
+            <span>Wayame, Ambon, Maluku, Indonesia</span>
           </div>
 
           <div className="flex flex-row gap-3 w-[70%] sm:w-max pt-3 sm:pt-4 items-center sm:items-start">
             <a
-              href="Resume.pdf"
+              href="cvclay.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className={`w-full sm:w-auto px-5 py-2.5 text-center text-[10px] sm:text-xs font-bold tracking-[0.18em] uppercase transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg ${
@@ -132,7 +132,7 @@ function Container1() {
             </a>
 
             <a
-              href="https://mail.google.com/mail/?view=cm&to=ehrvayn@gmail.com"
+              href="mailto:bredley.tuhuleruw@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className={`w-full sm:w-auto px-5 py-2.5 text-center text-[10px] sm:text-xs font-bold tracking-[0.18em] uppercase border transition-all duration-300 hover:scale-105 active:scale-95 ${

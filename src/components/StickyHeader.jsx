@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDarkMode } from "../context/DarkmodeProvider";
-import ProfilePic from "../assets/img/originalProfilePicture.png";
+import ProfilePic from "../assets/img/ProfileAsasa.png";
 
 function StickyHeader({ sentinelRef }) {
   const { darkMode } = useDarkMode();
@@ -35,7 +35,7 @@ function StickyHeader({ sentinelRef }) {
               ${darkMode ? "text-gray-200" : "text-gray-900"}
             `}
           >
-            Ehrvayn Rayven Olivera | Portfolio
+            Bredcly F Tuhuleruw | Portfolio
           </span>
         </div>
       </div>

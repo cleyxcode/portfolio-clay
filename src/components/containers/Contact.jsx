@@ -7,29 +7,29 @@ function Contact() {
     {
       name: "LinkedIn",
       icon: "bi-linkedin",
-      url: "https://www.linkedin.com/in/ehrvayn-rayven-olivera-7228a83b2/",
+      url: "https://www.linkedin.com/in/clay-tuhuleruw/",
     },
-    { name: "GitHub", icon: "bi-github", url: "https://github.com/ehrvayn" },
+    { name: "GitHub", icon: "bi-github", url: "https://github.com/cleyxcode" },
     {
-      name: "Facebook",
-      icon: "bi-facebook",
-      url: "https://www.facebook.com/ehrvayn.rayven.1",
+      name: "Stack Overflow",
+      icon: "bi-stack-overflow",
+      url: "https://stackoverflow.com/users/23094164/clay-tuhuleruw",
     },
   ];
 
   const quickContacts = [
     {
       label: "Email",
-      sub: "rjmomong@gmail.com",
+      sub: "Contact via LinkedIn",
       icon: "bi-envelope",
-      url: "https://mail.google.com/mail/?view=cm&to=rjmomong@gmail.com",
+      url: "https://www.linkedin.com/in/clay-tuhuleruw/",
     },
-    { label: "Reach me", sub: "099276485", icon: "bi-telephone" },
+    { label: "Location", sub: "Wayame, Ambon, Maluku, Indonesia", icon: "bi-geo-alt" },
     {
-      label: "Messenger",
-      sub: "Chat with me",
-      icon: "bi-messenger",
-      url: "https://m.me/ehrvayn.rayven.1",
+      label: "GitHub",
+      sub: "github.com/cleyxcode",
+      icon: "bi-github",
+      url: "https://github.com/cleyxcode",
     },
   ];
 

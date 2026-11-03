@@ -5,18 +5,53 @@ function Experience() {
 
   const experiences = [
     {
-      title: "Internship",
-      sub: "Actively seeking",
+      title: "Baba Farid School of Entrepreneurship",
+      sub: "Startup ecosystem, event management, website updates, and design thinking",
+      year: "Experience",
+      active: true,
+    },
+    {
+      title: "CodeSoft",
+      sub: "Developed dynamic websites, responsive UI/UX, testing, and debugging",
+      year: "Remote",
+      active: false,
+    },
+    {
+      title: "Freelance Developer",
+      sub: "Developing web, mobile, backend, and digital solutions for different projects",
+      year: "2023—2026",
+      active: false,
+    },
+    {
+      title: "IT Support Intern — Bank Maluku Kantor Pusat",
+      sub: "Information technology support and workplace technical assistance",
+      year: "2025",
+      active: false,
+    },
+    {
+      title: "VR Simulation Developer — Unity",
+      sub: "Developing a virtual-reality simulation in collaboration between Universitas Indonesia and Universitas Kristen Indonesia Maluku",
+      year: "2025",
+      active: false,
+    },
+    {
+      title: "Tabaos Application Developer",
+      sub: "Developing a Tabaos application with Flutter and Laravel for a lecturer research project at Universitas Kristen Indonesia Maluku",
       year: "2026",
       active: true,
     },
     {
-      title: "Capstone UI/UX developer",
-      sub: "QueuEx: A Computer Vision-Based Smart Queue Management and Predictive Service Delivery System",
-      year: "2026",
+      title: "Full-Stack Development",
+      sub: "Next.js, React.js, TypeScript, Node.js, and scalable web applications",
+      year: "2+ years",
       active: false,
     },
-    { title: "", sub: "", year: "", active: false },
+    {
+      title: "Creative Technology",
+      sub: "Chess, portrait sketching, and practical digital product development",
+      year: "Ongoing",
+      active: false,
+    },
   ];
 
   return (

@@ -21,7 +21,7 @@ function loadIcon(name) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" fill="currentColor" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">${inner}</svg>`;
 }
 
-function StackIcon({ name, className = "" }) {
+function StackIcon({ name, className = "", monochrome = false }) {
   const svg = useMemo(() => loadIcon(name), [name]);
 
   if (!svg) return null;
@@ -29,7 +29,7 @@ function StackIcon({ name, className = "" }) {
   return (
     <span
       aria-hidden="true"
-      className={`block w-full h-full [&>svg]:block [&>svg]:w-full [&>svg]:h-full ${className}`}
+      className={`block w-full h-full [&>svg]:block [&>svg]:w-full [&>svg]:h-full ${monochrome ? "grayscale" : ""} ${className}`}
       dangerouslySetInnerHTML={{ __html: svg }}
     />
   );

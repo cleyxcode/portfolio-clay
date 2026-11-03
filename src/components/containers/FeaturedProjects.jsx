@@ -1,11 +1,28 @@
 import { useDarkMode } from "../../context/DarkmodeProvider";
 import { useState } from "react";
-import NavsumaroImg from "../../assets/img/NavSumaroImg.png";
-import TechHubImg from "../../assets/img/TechHubImg.png";
-import PortfolioImg from "../../assets/img/PortfolioImg.png";
-import InterviewSparkImg from "../../assets/img/InterviewSparkImg.png";
-import StartSmartImg from "../../assets/img/StartSmartImg.png";
-import MochikuImg from "../../assets/img/Mochiku-Img.png";
+import PisangImg from "../../assets/img/pisang.png";
+import SchoolImg from "../../assets/img/carisekolah.png";
+import GameIdImg from "../../assets/img/gameid.png";
+import EportalImg from "../../assets/img/E-Portal.png";
+import TwitbirdImg from "../../assets/img/TwitbirdImage.png";
+import CodeMilitiaImg from "../../assets/img/CodeMilitia.png";
+import ChillChatImg from "../../assets/img/ChillChat.png";
+import BrocodeImg from "../../assets/img/BROCODE.png";
+import SdNegeriPassoImg from "../../assets/img/SDNegeri1Passo.png";
+import PnielChurchEvotingImg from "../../assets/img/PnielChurchEvoting.png";
+import GpmMasohiImg from "../../assets/img/GPMMasohi.png";
+import ElementaryLearningGameImg from "../../assets/img/ElementaryLearningGame.png";
+import AmRazerImg from "../../assets/img/AMRazer.png";
+import SdNegeriWarialauImg from "../../assets/img/SDNegeriWarialau.png";
+import TabaosTrackingAdminImg from "../../assets/img/TabaosTrackingAdmin.png";
+import KknUkimMonitoringImg from "../../assets/img/KKNUKIMMonitoring.png";
+import Sma17MalukuTengahImg from "../../assets/img/SMA17MalukuTengah.png";
+import OcimalaleoVillageImg from "../../assets/img/OcimalaleoVillage.png";
+import SinaraAdminPanelImg from "../../assets/img/SinaraAdminPanel.png";
+import TvriMalukuArchiveImg from "../../assets/img/TVRIMalukuArchive.png";
+import SmartPlantWateringImg from "../../assets/img/SmartPlantWateringApp.png";
+import SkinCancerScreeningImg from "../../assets/img/SkinCancerScreeningApp.png";
+import MovieWatchlistImg from "../../assets/img/MovieWatchlist.png";
 
 function FeaturedProjects() {
   const { darkMode } = useDarkMode();
@@ -13,75 +30,26 @@ function FeaturedProjects() {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const projects = [
-    {
-      name: "Mochiku",
-      description:
-        "An offline-first mobile app that turns photos of bills, receipts, and notices into structured, reviewable data. A vision-AI backend extracts each item's title, category, and deadline with a confidence score per field, flagging low-confidence results for review instead of silently trusting them. Deadline items require confirmation before a local reminder is scheduled; the rest auto-files into a photo grid, filterable by category. Photos save instantly to on-device SQLite regardless of connectivity, and failed uploads retry automatically once the device is back online.",
-      link: "expo.dev/accounts/ehrvayn/projects/mochiku/builds/42831a64-da9c-455c-b9c8-9a74fbc17ab1",
-      code: "https://github.com/ehrvayn/mochiku",
-      image: MochikuImg,
-      tech: [
-        "TypeScript",
-        "React Native",
-        "Expo",
-        "NativeWind",
-        "Node.js",
-        "SQLite",
-        "Groq AI",
-      ],
-    },
-    {
-      name: "TechHub",
-      description:
-        "TechHub is a full end-to-end e-commerce architecture, built from the database schema up through a layered backend to a complete customer storefront and admin back office. Customers browse products, manage a cart, check out, track real-time order status, and leave verified purchase reviews. Admins get a live dashboard with revenue analytics, order and inventory management, customer insights, and sales reports, all backed by real-time notifications via server-sent events. Authentication runs through Auth0 with role-based access control separating customer and admin experiences across every layer of the stack.",
-      link: "techhub-shop.vercel.app",
-      code: "github.com/ehrvayn/TechHub",
-      image: TechHubImg,
-      tech: [
-        "TypeScript",
-        "Next.js",
-        "React",
-        "Tailwind",
-        "Postgres",
-        "Auth0",
-        "Groq AI",
-      ],
-    },
-    {
-      name: "InterviewSpark",
-      description:
-        "InterviewSpark is an AI-powered interview coaching platform that simulates real-world technical and behavioral interviews. Get instant AI-driven feedback on every answer with detailed scoring across 6 performance metrics: clarity, confidence, relevance, communication, conciseness, and technical depth. Track your progress with an analytics dashboard that visualizes your improvement over time, identifies skill gaps, and provides actionable insights. Perfect for job seekers preparing for interviews at top tech companies.",
-      link: "interview-spark.vercel.app",
-      code: "github.com/ehrvayn/InterviewSpark",
-      image: InterviewSparkImg,
-      tech: [
-        "Groq AI",
-        "TypeScript",
-        "React",
-        "Tailwind",
-        "Next.js",
-        "Postgres",
-        "OAuth",
-      ],
-    },
-    {
-      name: "StartSmart",
-      description:
-        "StartSmart is an AI-powered business idea analyzer that breaks down any concept into a full viability report no sign-up needed. Just type your idea and instantly get a viability score, startup cost breakdown, launch timeline, market and risk assessment, and a legal compliance checklist. Plus, an AI chatbot that knows your idea and can answer any follow-up questions. Turn your idea into a roadmap in seconds.",
-      link: "startsmartgo.vercel.app",
-      code: "github.com/ehrvayn/StartSmart",
-      image: StartSmartImg,
-      tech: ["Groq AI", "TypeScript", "React", "Tailwind", "Next.js"],
-    },
-    {
-      name: "My Portfolio",
-      description:
-        "My Portfolio showcases my full-stack development work with a clean, responsive design highlighting my projects, certifications, and technical skills. It features an AI-powered chatbot built with Groq API integration, demonstrating my ability to create engaging interfaces and implement advanced technologies.",
-      link: "ehrvayn.vercel.app",
-      code: "github.com/ehrvayn/Portfolio",
-      image: PortfolioImg,
-      tech: ["Groq AI", "JavaScript", "React", "Tailwind"],
-    },
+    { name: "SD Negeri 1 Passo", description: "A school information system for SD Negeri 1 Passo, Ambon.", link: "sdnegeri1passo.site", code: "github.com/cleyxcode", image: SdNegeriPassoImg, tech: ["Web Application", "Laravel"] },
+    { name: "Pniel Church Online E-Voting", description: "An online voting system designed for Pniel Church elections.", code: "github.com/cleyxcode/web-suara", image: PnielChurchEvotingImg, tech: ["Web Application"] },
+    { name: "GPM Masohi Information System", description: "A digital information system for GPM Masohi.", link: "lightsteelblue-hornet-451399.hostingersite.com", code: "github.com/cleyxcode", image: GpmMasohiImg, tech: ["Web Application"] },
+    { name: "Elementary Learning Game", description: "An interactive learning game platform for elementary school students.", link: "gasipas.site/siswa/login", code: "github.com/cleyxcode", image: ElementaryLearningGameImg, tech: ["Interactive Web Game"] },
+    { name: "SD Negeri Warialau", description: "A school information system with administrative services.", link: "maroon-quail-402648.hostingersite.com", code: "github.com/cleyxcode", image: SdNegeriWarialauImg, tech: ["Web Application"] },
+    { name: "Tabaos Tracking Admin", description: "An administration panel for Tabaos tracking and monitoring.", link: "lightcyan-mule-612352.hostingersite.com", code: "github.com/cleyxcode", image: TabaosTrackingAdminImg, tech: ["Admin Panel"] },
+    { name: "KKN Tematik UKIM Monitoring", description: "A monitoring platform for the UKIM Thematic Community Service Program.", link: "kkntematikukim.site", code: "github.com/cleyxcode", image: KknUkimMonitoringImg, tech: ["Web Application"] },
+    { name: "SMA 17 Maluku Tengah", description: "A school information system for SMA 17 Maluku Tengah.", link: "slategrey-eland-996868.hostingersite.com", code: "github.com/cleyxcode", image: Sma17MalukuTengahImg, tech: ["Web Application"] },
+    { name: "Ocimalaleo Village Information System", description: "A digital information system for Ocimalaleo Village.", link: "desaocimalaleo.space", code: "github.com/cleyxcode", image: OcimalaleoVillageImg, tech: ["Web Application"] },
+    { name: "Sinara Integrated Admin Panel", description: "An integrated administration panel for the Sinara platform.", code: "github.com/cleyxcode", image: SinaraAdminPanelImg, tech: ["Admin Panel"] },
+    { name: "TVRI Maluku Letter Archive", description: "A letter archiving system for TVRI Maluku staff.", link: "cyan-tarsier-946301.hostingersite.com/karyawan/login", code: "github.com/cleyxcode/Web-Surat-Masuk", image: TvriMalukuArchiveImg, tech: ["PHP", "MySQL"] },
+    { name: "AM Razer", description: "A web platform developed for the AM Razer project.", link: "amrazer.space", code: "github.com/cleyxcode", image: AmRazerImg, tech: ["Web Application"] },
+    { name: "YOLO Plant Watering API", description: "A KNN-powered backend API for automated plant watering.", code: "github.com/cleyxcode/yolo-BE", image: CodeMilitiaImg, tech: ["API", "Machine Learning"] },
+    { name: "Smart Plant Watering App", description: "A mobile application for monitoring and controlling plant watering.", code: "github.com/cleyxcode/mobile-apps-air-", image: SmartPlantWateringImg, tech: ["Flutter", "IoT"] },
+    { name: "e-commerce Website", description: "E-commerce website built with Laravel Blade.", code: "github.com/cleyxcode/website-pisang", image: PisangImg, tech: ["Blade", "Laravel"] },
+    { name: "School Finder Indonesia", description: "A web application for finding schools across Indonesia.", link: "cari-sekolah.vercel.app", code: "github.com/cleyxcode/cari-sekolah", image: SchoolImg, tech: ["TypeScript"] },
+    { name: "Online Game ID Finder", description: "A tool for searching and identifying online game accounts.", link: "gameid-wizard.vercel.app", code: "github.com/cleyxcode/gameid-wizard", image: GameIdImg, tech: ["TypeScript"] },
+    { name: "Skin Cancer Screening App", description: "A Flutter mobile application for preliminary skin cancer screening.", code: "github.com/cleyxcode/skin-cancer-flutter", image: SkinCancerScreeningImg, tech: ["Flutter"] },
+    { name: "Movie Watchlist", description: "A web application for organizing and managing favorite movies.", code: "github.com/cleyxcode/WatchListMovie", image: MovieWatchlistImg, tech: ["Laravel"] },
+    { name: "Online Banana Store", description: "An online sales website for a local banana-based UMKM business.", code: "github.com/cleyxcode/website-pisang", image: PisangImg, tech: ["Laravel Blade"] },
     // {
     //   name: "NavSumaro",
     //   description:
@@ -141,8 +109,8 @@ function FeaturedProjects() {
                 <img
                   src={project.image}
                   alt={project.name}
-                  className={`h-full object-contain transition-transform duration-500 ${
-                    hoveredIndex === index ? "scale-110" : "scale-100"
+                  className={`w-full h-full object-cover scale-[1.02] transition-transform duration-500 ${
+                    hoveredIndex === index ? "scale-[1.08]" : "scale-[1.02]"
                   }`}
                   onError={(e) => (e.target.style.display = "none")}
                 />

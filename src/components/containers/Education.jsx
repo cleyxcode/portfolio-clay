@@ -5,27 +5,27 @@ function Education() {
 
   const data = [
     {
-      title: "BS Information Systems",
-      school: "Naga College Foundation Inc.",
-      year: "2026",
+      title: "Software & Full-Stack Development",
+      school: "Self-directed projects and professional work",
+      year: "2025—now",
       active: true,
     },
     {
-      title: "Senior High School - ICT",
-      school: "Camarines Sur National High School",
-      year: "2023",
+      title: "Computer Science & Application Development",
+      school: "Web, mobile, game, AR, and IoT projects",
+      year: "2024—2025",
       active: false,
     },
     {
-      title: "Junior High School - BEP",
-      school: "Camarines Sur National High School",
-      year: "2021",
+      title: "TVRI Maluku Developer",
+      school: "Government institution backend systems",
+      year: "2024—2025",
       active: false,
     },
     {
-      title: "Elementary",
-      school: "Sta Cruz Elementary School",
-      year: "2016",
+      title: "Selected project work",
+      school: "Education, healthcare, community, and business systems",
+      year: "2024",
       active: false,
     },
   ];

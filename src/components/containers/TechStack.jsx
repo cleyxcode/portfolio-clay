@@ -18,7 +18,10 @@ const SECTIONS = [
   {
     label: "Backend",
     techs: [
-      { name: "Node.js", icon: "nodedotjs" },
+      { name: "PHP", icon: "php" },
+      { name: "Laravel", icon: "laravel", monochrome: true },
+      { name: "Node.js", icon: "nodedotjs", monochrome: true },
+      { name: "Django", icon: "django", monochrome: true },
       { name: "MySQL", icon: "mysql" },
       { name: "PostgreSQL", icon: "postgresql" },
       { name: "ExpressJS", icon: "express" },
@@ -27,10 +30,20 @@ const SECTIONS = [
   {
     label: "Mobile",
     techs: [
+      { name: "Flutter", icon: "flutter", monochrome: true },
+      { name: "Dart", icon: "dart", monochrome: true },
+      { name: "Kotlin", icon: "kotlin", monochrome: true },
       { name: "React Native", icon: "reactnative" },
       { name: "Expo", icon: "expo" },
       { name: "NativeWind", icon: "nativewind" },
       { name: "SQLite", icon: "sqlite" },
+    ],
+  },
+  {
+    label: "Game & AR",
+    techs: [
+      { name: "Unity", icon: "unity", monochrome: true },
+      { name: "C#", icon: "csharp", monochrome: true },
     ],
   },
   {
@@ -125,7 +138,7 @@ function TechStack() {
                         : "bg-gray-100 hover:bg-gray-200 border-gray-300 text-black"
                     }`}
                   >
-                    <StackIcon name={tech.icon} />
+                    <StackIcon name={tech.icon} monochrome={tech.monochrome} />
                   </div>
                   <span
                     className={`w-full truncate text-center text-[10px] sm:text-[12px] leading-tight font-mono uppercase tracking-tight ${

@@ -1,8 +1,13 @@
 import { useState } from "react";
-import JSCert from "../../assets/img/JSCertificate.png";
-import DL1stSem from "../../assets/img/DL-1stSem.jpg";
-import DL2ndSem from "../../assets/img/DL-2ndSem.jpg";
-import responsiveCert from "../../assets/img/ResponsiveCert.png";
+import freeCodeCampResponsive from "../../assets/img/certificates/freecodecamp-responsive-web-design.png";
+import freeCodeCampJavascript from "../../assets/img/certificates/freecodecamp-javascript.png";
+import dicodingAi from "../../assets/img/certificates/dicoding-belajar-dasar-ai.png";
+import udemyCssJavascript from "../../assets/img/certificates/udemy-css-javascript-crash-course.png";
+import udemyEthicalHacking from "../../assets/img/certificates/udemy-ethically-hack-planet.png";
+import dicodingDataScience from "../../assets/img/certificates/dicoding-dasar-data-science.png";
+import dicodingFinancialLiteracy from "../../assets/img/certificates/dicoding-literasi-finansial.png";
+import ideaGenerativeAi from "../../assets/img/certificates/idea-kecerdasan-buatan-generatif.png";
+import dicodingSolid from "../../assets/img/certificates/dicoding-pemrograman-solid.png";
 import { useDarkMode } from "../../context/DarkmodeProvider";
 
 function Certifications() {
@@ -10,26 +15,15 @@ function Certifications() {
   const { darkMode } = useDarkMode();
 
   const certifications = [
-    {
-      name: "JavaScript Developer Certification 2026",
-      issuer: "freeCodeCamp",
-      img: JSCert,
-    },
-    {
-      name: "Responsive Web Design Developer Certification 2026",
-      issuer: "freeCodeCamp",
-      img: responsiveCert,
-    },
-    {
-      name: "Dean's Lister 2nd Semester 2023-2024",
-      issuer: "Naga College Foundation Inc.",
-      img: DL2ndSem,
-    },
-    {
-      name: "Dean's Lister 1st Semester 2023-2024",
-      issuer: "Naga College Foundation Inc.",
-      img: DL1stSem,
-    },
+    { name: "Responsive Web Design", issuer: "freeCodeCamp", img: freeCodeCampResponsive },
+    { name: "JavaScript Developer Certification", issuer: "freeCodeCamp", img: freeCodeCampJavascript },
+    { name: "Belajar Dasar AI", issuer: "Dicoding", img: dicodingAi },
+    { name: "CSS and Javascript Crash Course", issuer: "Udemy — Prosper Institute", img: udemyCssJavascript },
+    { name: "Ethically Hack the Planet Part 2", issuer: "Udemy — Cyber Talents", img: udemyEthicalHacking },
+    { name: "Belajar Dasar Data Science", issuer: "Dicoding", img: dicodingDataScience },
+    { name: "Introduction to Financial Literacy", issuer: "Dicoding", img: dicodingFinancialLiteracy },
+    { name: "Kecerdasan Buatan Generatif", issuer: "IDEA", img: ideaGenerativeAi },
+    { name: "Belajar Pemrograman SOLID", issuer: "Dicoding", img: dicodingSolid },
   ];
 
   return (

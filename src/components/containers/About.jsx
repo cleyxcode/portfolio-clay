@@ -30,10 +30,7 @@ function About() {
               darkMode ? "text-gray-200" : "text-gray-900"
             }`}
           >
-            4th-year BS Information Systems student at Naga College Foundation
-            Inc. who loves building full stack web and mobile apps and learns by doing. I
-            use AI tools to work smarter and build faster. Right now I’m looking for an opportunity to
-            apply my skills in a real project.
+            I am Bredcly F Tuhuleruw, a Full-Stack Developer with more than two years of experience building web and mobile applications. I work with JavaScript, TypeScript, Next.js, React, Node.js, PHP, Laravel, Flutter, Kotlin, Unity, and C#. My projects include school information systems, organization platforms, TVRI archive systems, e-commerce, educational games, healthcare applications, IoT, and augmented reality. I enjoy turning real-world ideas into useful digital products while continuously improving my technical and creative skills through coding, chess, and sketching.
           </p>
         </div>
       </div>

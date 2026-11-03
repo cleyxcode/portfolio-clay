@@ -86,7 +86,7 @@ export default function GithubContributions() {
           GitHub Contributions
         </h2>
         <a
-          href="https://github.com/ehrvayn"
+          href="https://github.com/cleyxcode"
           target="_blank"
           rel="noopener noreferrer"
           className={`text-xs font-mono flex items-center gap-1 transition-colors shrink-0 ${
@@ -113,7 +113,7 @@ export default function GithubContributions() {
           className="flex justify-center w-full"
         >
           <GitHubCalendar
-            username="ehrvayn"
+          username="cleyxcode"
             colorScheme={darkMode ? "dark" : "light"}
             blockSize={blockSize}
             theme={customTheme}

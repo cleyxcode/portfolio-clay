@@ -2,18 +2,24 @@ import { useState, useRef, useEffect } from "react";
 import { useDarkMode } from "../context/DarkmodeProvider";
 import Groq from "groq-sdk";
 import MyInfo from "../assets/info/MyInfo";
-import profilePic from "../assets/img/originalProfilePicture.png";
+import profilePic from "../assets/img/ProfileAsasa.png";
 import { BiSolidMessageDots } from "react-icons/bi";
 
-const groq = new Groq({
-  apiKey: import.meta.env.VITE_GROQ_API_KEY,
-  dangerouslyAllowBrowser: true,
-});
+const groqApiKey = import.meta.env.VITE_GROQ_API_KEY;
+
+// Do not initialize the SDK during module loading. A missing key would throw
+// before React can render the rest of the portfolio.
+const groq = groqApiKey
+  ? new Groq({
+      apiKey: groqApiKey,
+      dangerouslyAllowBrowser: true,
+    })
+  : null;
 
 function ChatBot() {
   const welcomeMessage = {
     role: "bot",
-    text: "Hello! I'm Ehrvayn a passionate developer always looking to grow and connect. Feel free to ask me anything, I'm happy to chat! ",
+    text: "Hello! I'm Bredcly, a full-stack developer. Feel free to ask me about my work and projects!",
   };
 
   const [open, setOpen] = useState(false);
@@ -47,6 +53,18 @@ function ChatBot() {
 
   const sendMessage = async () => {
     if (!input.trim()) return;
+
+    if (!groq) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "bot",
+          text: "Chatbot belum dikonfigurasi. Tambahkan VITE_GROQ_API_KEY pada file .env.",
+        },
+      ]);
+      setInput("");
+      return;
+    }
 
     const userMessage = { role: "user", text: input };
     setMessages((prev) => [...prev, userMessage]);
@@ -91,7 +109,7 @@ function ChatBot() {
                 src={profilePic}
               />
               <div className="flex flex-col">
-                <span className="text-sm sm:text-base">Ehrvayn Rayven Olivera</span>
+                <span className="text-sm sm:text-base">Bredcly F Tuhuleruw</span>
                 <span className="flex items-center gap-1 text-xs font-normal">
                   <span className="w-2 h-2 rounded-full bg-green-500 inline-block"></span>
                   Online
@@ -118,7 +136,7 @@ function ChatBot() {
                     <span
                       className={`text-xs font-semibold ${darkMode ? "text-gray-400" : "text-gray-600"}`}
                     >
-                      Ehrvayn
+                      Bredley
                     </span>
                   </div>
                 )}
