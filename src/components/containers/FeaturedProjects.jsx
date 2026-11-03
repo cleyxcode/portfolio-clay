@@ -88,11 +88,11 @@ function FeaturedProjects() {
         </div>
       </header>
 
-      <div className="space-y-4 h-[60vh] lg:h-[800px] max-h-[800px] overflow-y-auto custom-scroll">
+      <div className="space-y-4 min-h-0 max-h-none overflow-visible lg:h-[800px] lg:max-h-[800px] lg:overflow-y-auto custom-scroll">
         {projects.map((project, index) => (
           <article
             key={index}
-            className={` border p-5 transition-all duration-200 ${
+            className={`border p-5 pb-6 shrink-0 transition-all duration-200 ${
               darkMode
                 ? "bg-[#212124] border-gray-700 hover:border-gray-500"
                 : "bg-gray-50 border-gray-200 hover:border-gray-400"
@@ -100,7 +100,7 @@ function FeaturedProjects() {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 min-h-0">
               <div
                 className={`w-full sm:w-1/2 lg:w-2/5 h-56 sm:h-64 lg:h-70 p-3 rounded flex-shrink-0 overflow-hidden ${
                   darkMode ? "bg-black/40" : "bg-gray-100"
@@ -116,7 +116,7 @@ function FeaturedProjects() {
                 />
               </div>
 
-              <div className="flex flex-col gap-3 flex-1 min-w-0">
+              <div className="flex flex-col gap-3 flex-1 min-w-0 min-h-0">
                 <div>
                   <h3
                     className={`text-base sm:text-lg md:text-lg lg:text-lg xl:text-xl  font-bold mb-2 ${darkMode ? "text-gray-200" : "text-gray-900"}`}
@@ -124,7 +124,7 @@ function FeaturedProjects() {
                     {project.name}
                   </h3>
                   <p
-                    className={`text-sm text-justify leading-relaxed ${
+                    className={`text-sm text-left md:text-justify leading-relaxed ${
                       expandedIndex === index
                         ? ""
                         : "line-clamp-3 sm:line-clamp-none"

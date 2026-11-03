@@ -16,6 +16,24 @@ const groq = groqApiKey
     })
   : null;
 
+// The model may return Markdown even when the chat is intended to be plain text.
+// Normalize it before rendering so formatting characters and HTML never appear.
+function toPlainText(value = "") {
+  return String(value)
+    .replace(/```[\s\S]*?```/g, (block) => block.replace(/```[^\n]*\n?/g, ""))
+    .replace(/<[^>]*>/g, "")
+    .replace(/!\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/^\s{0,3}#{1,6}\s*/gm, "")
+    .replace(/^\s*[-*+]\s+/gm, "")
+    .replace(/^\s*\d+[.)]\s+/gm, "")
+    .replace(/(\*\*|__)(.*?)\1/g, "$2")
+    .replace(/([*_~`])(.*?)\1/g, "$2")
+    .replace(/\s+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 function ChatBot() {
   const welcomeMessage = {
     role: "bot",
@@ -81,7 +99,7 @@ function ChatBot() {
       });
       const botMessage = {
         role: "bot",
-        text: result.choices[0].message.content,
+        text: toPlainText(result.choices[0].message.content),
       };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {

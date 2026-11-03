@@ -25,6 +25,7 @@ const SECTIONS = [
       { name: "MySQL", icon: "mysql" },
       { name: "PostgreSQL", icon: "postgresql" },
       { name: "ExpressJS", icon: "express" },
+      { name: "GCP", icon: "googlecloud" },
     ],
   },
   {
@@ -44,6 +45,7 @@ const SECTIONS = [
     techs: [
       { name: "Unity", icon: "unity", monochrome: true },
       { name: "C#", icon: "csharp", monochrome: true },
+      { name: "Godot", icon: "godot", monochrome: true },
     ],
   },
   {
@@ -55,29 +57,6 @@ const SECTIONS = [
       { name: "Canva", icon: "canva" },
       { name: "Postman", icon: "postman" },
     ],
-  },
-  {
-    label: "Security",
-    techs: [
-      { name: "JWT", icon: "jsonwebtokens" },
-      { name: "bcrypt", icon: "bcrypt" },
-      { name: "OAuth", icon: "oauth" },
-      { name: "Auth0", icon: "auth0" },
-    ],
-  },
-  {
-    label: "AI",
-    techs: [
-      { name: "Gemini", icon: "googlegemini" },
-      { name: "Groq", icon: "groq" },
-      { name: "Anthropic", icon: "anthropic" },
-      { name: "OpenCode", icon: "opencode" },
-      { name: "OpenAI", icon: "openai" },
-    ],
-  },
-  {
-    label: "Cloud",
-    techs: [{ name: "GCP", icon: "googlecloud" }],
   },
 ];
 

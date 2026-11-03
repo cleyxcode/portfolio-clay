@@ -1,3 +1,5 @@
+/* The provider and its hook intentionally share this module's context. */
+/* eslint-disable react-refresh/only-export-components */
 import { useContext, useState, createContext } from "react";
 
 const DarkmodeContext = createContext();
