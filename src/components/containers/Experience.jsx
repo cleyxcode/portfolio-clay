@@ -46,12 +46,6 @@ function Experience() {
       year: "2+ years",
       active: false,
     },
-    {
-      title: "Creative Technology",
-      sub: "Chess, portrait sketching, and practical digital product development",
-      year: "Ongoing",
-      active: false,
-    },
   ];
 
   return (
@@ -71,7 +65,7 @@ function Experience() {
                   darkMode ? "text-gray-200" : "text-gray-900"
                 }`}
               >
-                Experience
+                <span className="rb-blur-text inline-block">Experience</span>
               </h2>
             </div>
           </div>
@@ -80,12 +74,16 @@ function Experience() {
         <div className="flex flex-col p-1 overflow-y-auto flex-1 min-h-0 custom-scroll">
           <div className="relative">
             {experiences.map((item, index) => (
-              <div key={index} className={`relative pl-6 py-3 `}>
+              <div
+                key={index}
+                className="rb-list-item timeline-item relative pl-6 py-3"
+                style={{ animationDelay: `${index * 70}ms` }}
+              >
                 <div className="absolute -left-1 top-0 bottom-0 w-6 flex flex-col items-center">
                   {item.title && (
                     <>
                       <div
-                        className={`w-3 h-3 rounded-full mt-4 shrink-0 ring-2 ${
+                        className={`timeline-dot w-3 h-3 rounded-full mt-4 shrink-0 ring-2 ${
                           item.active
                             ? darkMode
                               ? "bg-gray-300 ring-gray-500/30"
@@ -97,7 +95,7 @@ function Experience() {
                       />
                       {index !== experiences.length - 1 && (
                         <div
-                          className={`w-0.5 flex-1 -mb-4 ${
+                          className={`timeline-line w-0.5 flex-1 -mb-4 ${
                             darkMode ? "bg-gray-700" : "bg-gray-300"
                           }`}
                         />

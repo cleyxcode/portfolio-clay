@@ -82,7 +82,7 @@ function FeaturedProjects() {
             <h2
               className={`text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl  uppercase font-mono font-bold tracking-tight ${darkMode ? "text-gray-200" : "text-gray-900"}`}
             >
-              Featured Projects
+              <span className="rb-blur-text inline-block">Featured Projects</span>
             </h2>
           </div>
         </div>
@@ -92,7 +92,7 @@ function FeaturedProjects() {
         {projects.map((project, index) => (
           <article
             key={index}
-            className={`border p-5 pb-6 shrink-0 transition-all duration-200 ${
+              className={`rb-tilt-card border p-5 pb-6 shrink-0 transition-all duration-200 ${
               darkMode
                 ? "bg-[#212124] border-gray-700 hover:border-gray-500"
                 : "bg-gray-50 border-gray-200 hover:border-gray-400"

@@ -14,6 +14,10 @@ function Container1() {
   const toggleBtnRef = useRef(null);
   const [isHovered, setIshovered] = useState(false);
   const handleMouseEnter = () => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      return;
+    }
+
     if (videoRef.current) {
       setIshovered(true);
       videoRef.current.play();
@@ -21,11 +25,33 @@ function Container1() {
   };
 
   const handleMouseLeave = () => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      return;
+    }
+
     if (videoRef.current) {
       videoRef.current.pause();
       setIshovered(false);
       videoRef.current.currentTime = 0;
     }
+  };
+
+  const handleProfileClick = () => {
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      return;
+    }
+
+    if (!videoRef.current) return;
+
+    if (isHovered) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+      setIshovered(false);
+      return;
+    }
+
+    setIshovered(true);
+    videoRef.current.play().catch(() => setIshovered(false));
   };
 
   const handleThemeToggle = () => {
@@ -66,9 +92,10 @@ function Container1() {
       <div className="flex flex-col md:flex-row md:gap-5 items-center w-full">
         <div className="flex-shrink-0 w-full sm:w-auto flex justify-center sm:justify-start">
           <div
-            className={`relative group p-2 overflow-hidden cursor-pointer rounded-md`}
+            className={`relative group p-2 overflow-hidden md:cursor-pointer rounded-md`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={handleProfileClick}
           >
             <Halftone
               src={ProfilePic}
@@ -80,7 +107,7 @@ function Container1() {
               photoOpacity={0.78}
               background="transparent"
               dotColor={"rgba(255,255,255,0.80)"}
-              className={`relative h-36 w-36 sm:h-30 sm:w-30 md:h-40 md:w-40 lg:h-50 lg:w-50 xl:h-60 xl:w-60 border transition-opacity duration-300 group-hover:opacity-0 ${isHovered && "border-transparent"} ${
+              className={`relative h-36 w-36 sm:h-30 sm:w-30 md:h-40 md:w-40 lg:h-50 lg:w-50 xl:h-60 xl:w-60 border transition-opacity duration-300 ${isHovered ? "opacity-0" : ""} md:group-hover:opacity-0 ${isHovered && "border-transparent"} ${
                 darkMode ? " border-gray-500/40" : " border-gray-500/40 "
               }`}
             />
@@ -91,7 +118,7 @@ function Container1() {
               muted
               loop
               playsInline
-              className="absolute inset-0 h-full w-full object-cover rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+              className={`absolute inset-0 h-full w-full object-cover rounded-md transition-opacity duration-300 pointer-events-none ${isHovered ? "opacity-100" : "opacity-0"} md:group-hover:opacity-100`}
             />
           </div>
         </div>

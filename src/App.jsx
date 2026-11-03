@@ -2,12 +2,13 @@ import Container1 from "./components/Dividers/Container1";
 import Container2 from "./components/Dividers/Container2";
 import Container3 from "./components/Dividers/Container3";
 import Container4 from "./components/Dividers/Container4";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { useDarkMode } from "./context/DarkmodeProvider";
 import ChatBot from "./components/ChatBot";
 import StackMarquee from "./components/StackMarquee";
 import StickyHeader from "./components/StickyHeader";
 import { useRef } from "react";
+import BlobCursor from "./components/BlobCursor";
 
 function App() {
   const { darkMode } = useDarkMode();
@@ -21,8 +22,44 @@ function App() {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    const revealItems = document.querySelectorAll("[data-scroll-reveal]");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
+      <div className="fixed inset-0 z-[60] hidden pointer-events-none md:block">
+        <BlobCursor
+          material="ink"
+          color="#c5c8cc"
+          size={25}
+          trail={8}
+          lag={0.45}
+          goo={0.8}
+          splash={false}
+          shine={0.35}
+          hideCursor
+        />
+      </div>
       <StickyHeader sentinelRef={heroRef} />
       <div
         className={`${darkMode ? "bg-[#0e0e11] text-gray-200" : "bg-white"} w-full min-h-screen flex flex-col 
@@ -31,8 +68,12 @@ function App() {
         <div ref={heroRef}>
           <Container1 />
         </div>
-        <StackMarquee />
-        <Container2 />
+        <div data-scroll-reveal className="scroll-reveal">
+          <StackMarquee />
+        </div>
+        <div data-scroll-reveal className="scroll-reveal">
+          <Container2 />
+        </div>
         <div className="flex items-center w-full opacity-80">
           <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-gray-500/70" />
           <span className="px-4 text-[8px] lg:text-[10px] font-mono tracking-[0.4em] uppercase whitespace-nowrap text-gray-400">
@@ -40,7 +81,9 @@ function App() {
           </span>
           <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gray-500/70" />
         </div>
-        <Container3 />
+        <div data-scroll-reveal className="scroll-reveal">
+          <Container3 />
+        </div>
         <div className="flex items-center w-full opacity-80">
           <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-gray-500/70" />
           <span className="px-4 text-[8px] lg:text-[10px] font-mono tracking-[0.4em] uppercase whitespace-nowrap text-gray-400">
@@ -48,7 +91,9 @@ function App() {
           </span>
           <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gray-500/70" />
         </div>
-        <Container4 />
+        <div data-scroll-reveal className="scroll-reveal">
+          <Container4 />
+        </div>
         <ChatBot />
 
         <footer

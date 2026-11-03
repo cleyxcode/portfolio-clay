@@ -72,11 +72,16 @@ function Certifications() {
       {selectedImg && (
         <div
           onClick={() => setSelectedImg(null)}
-          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Certificate preview"
+          className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/80 p-4 sm:p-6"
         >
           <img
             src={selectedImg}
-            className="w-[80%] h-[80%] object-contain rounded-lg"
+            alt="Certificate preview"
+            onClick={(event) => event.stopPropagation()}
+            className="block max-h-[90dvh] max-w-[95vw] w-auto h-auto object-contain rounded-lg shadow-2xl"
           />
         </div>
       )}
