@@ -55,7 +55,7 @@ function FeaturedProjects() {
     //   description:
     //     "NavSumaro is the all-in-one student platform that replaces multiple fragmented campus tools. Access a verified academic Q&A forum, secure peer-to-peer marketplace for textbooks and supplies, and built-in collaboration tools all powered by institutional email verification for trust and safety. Connect with real classmates, buy and sell with confidence, and get academic help from verified students in your university community.",
     //   link: "navsumaro.vercel.app",
-    //   code: "github.com/ehrvayn/navSumaro",
+    //   code: "github.com/cleyxcode/navSumaro",
     //   image: NavsumaroImg,
     //   tech: [
     //     "TypeScript",
