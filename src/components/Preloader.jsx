@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion as Motion } from "motion/react";
+import { AnimatePresence, motion as Motion, useReducedMotion } from "motion/react";
 
 // Tuning panel: change these values to adjust the cinematic sequence.
 const DEBUG_ALWAYS_SHOW = true; // Set false to show once per browser session.
@@ -46,6 +46,8 @@ function Preloader({ onComplete }) {
   const [phase, setPhase] = useState("show");
   const [progress, setProgress] = useState(0);
   const readyRef = useRef(document.readyState === "complete");
+  const prefersReducedMotion = useReducedMotion();
+  const progressLabel = progress >= 100 ? "SYSTEM READY" : progress >= 70 ? "COMPOSITING" : "LOADING ASSETS";
 
   useEffect(() => {
     document.getElementById("initial-preloader")?.remove();
@@ -119,6 +121,28 @@ function Preloader({ onComplete }) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 1 }}
         >
+          <Motion.div
+            className="preloader-scanline"
+            aria-hidden="true"
+            initial={{ y: "-110%", opacity: 0 }}
+            animate={prefersReducedMotion ? { y: "0%", opacity: 0 } : { y: "110vh", opacity: [0, 0.45, 0] }}
+            transition={prefersReducedMotion ? { duration: 0 } : { duration: 4.8, repeat: Infinity, ease: "linear", delay: 0.8 }}
+          />
+          <div className="preloader-grid" aria-hidden="true" />
+          <Motion.div
+            className="preloader-tick-ring"
+            aria-hidden="true"
+            animate={prefersReducedMotion ? { rotate: 0, opacity: 0 } : { rotate: 360 }}
+            transition={prefersReducedMotion ? { duration: 0 } : { duration: 24, repeat: Infinity, ease: "linear" }}
+          >
+            {Array.from({ length: 12 }, (_, index) => (
+              <span key={index} style={{ "--tick-angle": `${index * 30}deg` }} />
+            ))}
+          </Motion.div>
+          <div className="preloader-corner preloader-corner-tl" aria-hidden="true">CX / 01</div>
+          <div className="preloader-corner preloader-corner-tr" aria-hidden="true">2026</div>
+          <div className="preloader-corner preloader-corner-bl" aria-hidden="true">AMBON / ID</div>
+          <div className="preloader-corner preloader-corner-br" aria-hidden="true">ONLINE</div>
           <div className="preloader-inner">
             <Motion.p
               className="preloader-kicker"
@@ -136,6 +160,35 @@ function Preloader({ onComplete }) {
             />
 
             <div className="preloader-brand-wrap" aria-label={BRAND}>
+              <Motion.div
+                className="preloader-orbit preloader-orbit-outer"
+                aria-hidden="true"
+                animate={prefersReducedMotion ? { rotate: 0, opacity: 0 } : { rotate: 360, opacity: [0.2, 0.45, 0.2] }}
+                transition={prefersReducedMotion ? { duration: 0 } : { rotate: { duration: 16, repeat: Infinity, ease: "linear" }, opacity: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
+              >
+                <span className="preloader-orbit-dot preloader-orbit-dot-a" />
+                <span className="preloader-orbit-dot preloader-orbit-dot-b" />
+              </Motion.div>
+              <Motion.div
+                className="preloader-orbit preloader-orbit-inner"
+                aria-hidden="true"
+                animate={prefersReducedMotion ? { rotate: 0, opacity: 0 } : { rotate: -360, opacity: [0.12, 0.3, 0.12] }}
+                transition={prefersReducedMotion ? { duration: 0 } : { rotate: { duration: 11, repeat: Infinity, ease: "linear" }, opacity: { duration: 3.2, repeat: Infinity, ease: "easeInOut" } }}
+              >
+                <span className="preloader-orbit-dot preloader-orbit-dot-c" />
+              </Motion.div>
+              <Motion.div
+                className="preloader-crosshair"
+                aria-hidden="true"
+                animate={prefersReducedMotion ? { opacity: 0 } : { opacity: [0.2, 0.65, 0.2], scale: [0.92, 1, 0.92] }}
+                transition={prefersReducedMotion ? { duration: 0 } : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <Motion.div
+                className="preloader-brand-aura"
+                aria-hidden="true"
+                animate={prefersReducedMotion ? { opacity: 0 } : { opacity: [0.08, 0.2, 0.08], scale: [0.96, 1.03, 0.96] }}
+                transition={prefersReducedMotion ? { duration: 0 } : { duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
+              />
               <Motion.div
                 className="preloader-brand-layers"
                 initial={{ y: 0, opacity: 1 }}
@@ -155,7 +208,10 @@ function Preloader({ onComplete }) {
             </div>
 
             <div className="preloader-progress">
-              <span className="preloader-counter">{String(progress).padStart(3, "0")}</span>
+              <div className="preloader-progress-copy">
+                <span className="preloader-counter">{String(progress).padStart(3, "0")}</span>
+                <span className="preloader-progress-label">{progressLabel}</span>
+              </div>
               <div className="preloader-progress-track">
                 <Motion.div className="preloader-progress-bar" animate={{ scaleX: progress / 100 }} transition={{ duration: 0.16, ease: "linear" }} />
               </div>
