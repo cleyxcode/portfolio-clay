@@ -1,4 +1,4 @@
-import ProfilePic from "../../assets/img/ProfileAsasa.png";
+import ProfilePic from "../../assets/img/profileBredcly.PNG";
 import Halftone from "../Halftone";
 import { useDarkMode } from "../../context/DarkmodeProvider";
 import AnimeBlack from "../../assets/vid/AnimeDark.mp4";
@@ -105,6 +105,7 @@ function Container1() {
               dotScale={0.9}
               intensity={0.3}
               photoOpacity={0.78}
+              keyWhite={256}
               background="transparent"
               dotColor={"rgba(255,255,255,0.80)"}
               className={`relative h-36 w-36 sm:h-30 sm:w-30 md:h-40 md:w-40 lg:h-50 lg:w-50 xl:h-60 xl:w-60 border transition-opacity duration-300 ${isHovered ? "opacity-0" : ""} md:group-hover:opacity-0 ${isHovered && "border-transparent"} ${

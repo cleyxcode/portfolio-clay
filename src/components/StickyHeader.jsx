@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDarkMode } from "../context/DarkmodeProvider";
-import ProfilePic from "../assets/img/ProfileAsasa.png";
+import ProfilePic from "../assets/img/profileBredcly.PNG";
 
 function StickyHeader({ sentinelRef }) {
   const { darkMode } = useDarkMode();

@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useDarkMode } from "../context/DarkmodeProvider";
 import Groq from "groq-sdk";
 import MyInfo from "../assets/info/MyInfo";
-import profilePic from "../assets/img/ProfileAsasa.png";
+import profilePic from "../assets/img/profileBredcly.PNG";
 import { BiSolidMessageDots } from "react-icons/bi";
 
 const groqApiKey = import.meta.env.VITE_GROQ_API_KEY;
