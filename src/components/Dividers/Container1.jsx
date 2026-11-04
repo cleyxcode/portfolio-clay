@@ -97,6 +97,14 @@ function Container1() {
             onMouseLeave={handleMouseLeave}
             onClick={handleProfileClick}
           >
+            <img
+              src={ProfilePic}
+              alt="Bredcly F Tuhuleruw"
+              width="1024"
+              height="1536"
+              decoding="async"
+              className="profile-photo-clean relative h-36 w-36 sm:h-30 sm:w-30 md:h-40 md:w-40 lg:h-50 lg:w-50 xl:h-60 xl:w-60 rounded-md border border-gray-500/40 object-cover"
+            />
             <Halftone
               src={ProfilePic}
               cell={9}
@@ -108,7 +116,7 @@ function Container1() {
               keyWhite={256}
               background="transparent"
               dotColor={"rgba(255,255,255,0.80)"}
-              className={`relative h-36 w-36 sm:h-30 sm:w-30 md:h-40 md:w-40 lg:h-50 lg:w-50 xl:h-60 xl:w-60 border transition-opacity duration-300 ${isHovered ? "opacity-0" : ""} md:group-hover:opacity-0 ${isHovered && "border-transparent"} ${
+              className={`profile-halftone relative h-36 w-36 sm:h-30 sm:w-30 md:h-40 md:w-40 lg:h-50 lg:w-50 xl:h-60 xl:w-60 border transition-opacity duration-300 ${isHovered ? "opacity-0" : ""} md:group-hover:opacity-0 ${isHovered && "border-transparent"} ${
                 darkMode ? " border-gray-500/40" : " border-gray-500/40 "
               }`}
             />

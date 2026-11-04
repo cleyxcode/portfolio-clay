@@ -184,7 +184,7 @@ export default function Halftone({
       image.onload = null;
       image.onerror = null;
     };
-  }, [src, darkMode, cell, gamma, dotScale, intensity, photoOpacity, keyWhite, mono, monoThreshold, blackPoint, whitePoint, dot, bg]);
+  }, [src, darkMode, cell, gamma, dotScale, intensity, photoOpacity, keyWhite, mono, monoThreshold, blackPoint, whitePoint, dot, bg, onError]);
 
   return <canvas ref={canvasRef} className={`block ${className}`} aria-hidden="true" />;
 }

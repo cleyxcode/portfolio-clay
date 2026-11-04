@@ -70,7 +70,7 @@ function App() {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: pageReady ? 1 : 0, y: pageReady ? 0 : 18 }}
         transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
-        className={`${darkMode ? "bg-[#0e0e11] text-gray-200" : "bg-white"} w-full min-h-screen flex flex-col 
+        className={`${darkMode ? "bg-[#0e0e11] text-gray-200" : "bg-white"} app-shell w-full flex flex-col
         gap-5 px-1 md:px-[100px] lg:px-[200px] xl:px-[300px] 2xl:px-[450px] py-6 md:py-8 lg:py-10`}
       >
         <div ref={heroRef}>
