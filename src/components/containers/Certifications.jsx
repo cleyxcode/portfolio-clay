@@ -1,4 +1,5 @@
 import { useState } from "react";
+import googleDeveloper from "../../assets/img/certificates/google-developer.png";
 import freeCodeCampResponsive from "../../assets/img/certificates/freecodecamp-responsive-web-design.png";
 import freeCodeCampJavascript from "../../assets/img/certificates/freecodecamp-javascript.png";
 import dicodingAi from "../../assets/img/certificates/dicoding-belajar-dasar-ai.png";
@@ -15,6 +16,7 @@ function Certifications() {
   const { darkMode } = useDarkMode();
 
   const certifications = [
+    { name: "Google Developer — Community Member", issuer: "Google Developer Groups on Campus (GDGoC UB)", img: googleDeveloper },
     { name: "Responsive Web Design", issuer: "freeCodeCamp", img: freeCodeCampResponsive },
     { name: "JavaScript Developer Certification", issuer: "freeCodeCamp", img: freeCodeCampJavascript },
     { name: "Belajar Dasar AI", issuer: "Dicoding", img: dicodingAi },

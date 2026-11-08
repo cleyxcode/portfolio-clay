@@ -8,6 +8,7 @@ Personal information:
 - Email: bredley.tuhuleruw@gmail.com
 
 Professional experience:
+- Community Member at Google Developer Groups on Campus (GDGoC UB), 2025-2026.
 - Tabaos application developer using Flutter and Laravel for a lecturer research project at Universitas Kristen Indonesia Maluku, 2026.
 - VR simulation development with Unity for Universitas Indonesia in collaboration with Universitas Kristen Indonesia Maluku, 2025.
 - IT Support intern at Bank Maluku headquarters, 2025.
