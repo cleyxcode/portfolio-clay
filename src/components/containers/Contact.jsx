@@ -15,6 +15,12 @@ function Contact() {
       icon: "bi-stack-overflow",
       url: "https://stackoverflow.com/users/23094164/clay-tuhuleruw",
     },
+    {
+      name: "Instagram",
+      icon: "bi-instagram",
+      url: "https://www.instagram.com/clayxcode",
+      sub: "@clayxcode",
+    },
   ];
 
   const quickContacts = [
@@ -70,13 +76,20 @@ function Contact() {
                     darkMode ? "text-gray-200" : "text-gray-900"
                   }`}
                 />
-                <p
-                  className={`text-sm font-semibold ${
-                    darkMode ? "text-gray-200" : "text-gray-900"
-                  }`}
-                >
-                  {link.name}
-                </p>
+                <div className="flex flex-col">
+                  <p
+                    className={`text-sm font-semibold ${
+                      darkMode ? "text-gray-200" : "text-gray-900"
+                    }`}
+                  >
+                    {link.name}
+                  </p>
+                  {link.sub && (
+                    <p className={`text-xs font-mono ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
+                      {link.sub}
+                    </p>
+                  )}
+                </div>
               </div>
               <i
                 className={`bi bi-arrow-up-right text-xs ${darkMode ? "text-gray-400" : "text-gray-600"}`}
